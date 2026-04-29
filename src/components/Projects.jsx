@@ -7,7 +7,7 @@ const projectsData = [
     description: "Business management tool featuring secure user authentication, role-based access, and automated administrative reporting.",
     tech: ["MongoDB", "Express", "React", "Node.js"],
     image: "./re", // Move this file to your /public folder
-    github: "https://github.com/gayanieka/website-project-2.git", 
+    github: "https://github.com/gayanieka/website-project-2.git",
     live: "https://google.com"
   },
   {
@@ -34,7 +34,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="space-y-4">
@@ -51,15 +51,15 @@ const Projects = () => {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projectsData.map((project, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="group relative h-[450px] rounded-[2.5rem] overflow-hidden bg-gray-200 shadow-2xl shadow-gray-200 transition-all duration-500 hover:-translate-y-2"
             >
               {/* Image Layer with Fallback Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-gray-200" />
-              <img 
-                src={project.image} 
-                alt={project.title} 
+              <img
+                src={project.image}
+                alt={project.title}
                 className="relative z-10 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 onError={(e) => { e.target.style.display = 'none'; }} // Hides the "broken" icon if image fails
               />
@@ -91,18 +91,18 @@ const Projects = () => {
 
                 {/* Action Links - NOW WORKING */}
                 <div className="flex gap-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-white font-black text-xs uppercase tracking-widest border-b-2 border-[#8B5CF6] pb-1 hover:text-[#8B5CF6] transition-colors"
                   >
                     GitHub
                   </a>
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-white font-black text-xs uppercase tracking-widest border-b-2 border-[#8B5CF6] pb-1 hover:text-[#8B5CF6] transition-colors"
                   >
                     Live Demo
