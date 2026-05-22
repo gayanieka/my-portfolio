@@ -145,7 +145,7 @@ const projectsData = [
     image: null,
     links: [
       { label: "GitHub (Warehouse)", href: "https://github.com/gayanieka/Shopping-mall-data-warehouse.git" },
-      { label: "GitHub (Reporting)", href: "https://github.com/gayanieka/Shopping-mall-sales-reporting.git" }
+      { label: "GitHub (Reporting)", href: "https://github.com/gayanieka/Shopping-mall-olap-reporting.git" }
     ]
   },
   {
@@ -188,13 +188,19 @@ const projectsData = [
     ]
   },
   {
-    title: "Computer Retail Management System",
-    category: "Full Stack Development",
-    description: "Built a MERN-stack e-commerce + retail management platform with secure RBAC login, staff tracking, and admin reporting.",
-    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "REST API"],
-    image: "./project6.jpg",
-    github: "https://github.com/gayanieka/website-project-1.git",
-    live: "https://github.com/gayanieka/website-project-1.git"
+    title: "Fixed & Tidy Mobile App (UI/UX)",
+    category: "UI/UX Design",
+    description: "Designed a mobile UI/UX concept for a cleaning & repair service platform that connects users with screened professionals for home maintenance.",
+    shortDescription: "Mobile UI/UX design for a cleaning & repair service platform.",
+    details: "Fixed & Tidy transforms home maintenance through an easy-to-use mobile platform, connecting users with carefully screened professionals and ensuring quality service for every request.",
+    tech: ["UI/UX", "Mobile Design", "Prototyping"],
+    image: null,
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/gayanieka/Mobile-Application-UIUX-design-for-cleaning-service-provider"
+      }
+    ]
   }
 ];
 
