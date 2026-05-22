@@ -17,13 +17,14 @@ const Hero = () => {
             👋 Welcome to my portfolio
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
-            Hi, I'm <br className="hidden md:block" />
-            <span className="text-gradient">Gayani Ekanayake</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tighter break-words">
+            Hi, I'm
+            <span className="block text-gradient">Gayani</span>
+            <span className="block text-gradient">Ekanayake</span>
           </h1>
 
           <p className="text-xl md:text-2xl font-extrabold text-gray-800 tracking-tight">
-            Data Science & Machine Learning Undergraduate
+            Data Science Undergraduate
           </p>
 
           <p className="text-lg text-gray-600 max-w-2xl leading-relaxed font-medium mx-auto md:mx-0">

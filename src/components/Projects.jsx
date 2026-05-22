@@ -49,7 +49,7 @@ const projectsData = [
   {
     title: "Computer Retail Management System",
     category: "Full Stack Development",
-    description: "Built a MERN-stack e-commerce and retail management platform to streamline retail workflows, manage backend staff tracking, integrate secure RBAC login workflows, and support administrative report generation.",
+    description: "Built a MERN-stack e-commerce + retail management platform with secure RBAC login, staff tracking, and admin reporting.",
     tech: ["MongoDB", "Express.js", "React.js", "Node.js", "REST API"],
     image: "./project6.jpg",
     github: "https://github.com/gayanieka/website-project-1.git",
