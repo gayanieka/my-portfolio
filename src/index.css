@@ -2,8 +2,8 @@
 
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
-  --color-primary: #8B5CF6; /* Purple-500 equivalent */
-  --color-primary-dark: #7C3AED; /* Purple-600 equivalent */
+  --color-primary: #4F46E5; /* Indigo-600 equivalent */
+  --color-primary-dark: #3730A3; /* Indigo-800 equivalent */
   --color-secondary: #1F2937; /* Gray-800 equivalent */
   --color-background: #F9FAFB; /* Gray-50 equivalent */
   --color-surface: #FFFFFF;
@@ -42,7 +42,7 @@
   }
   
   .text-gradient {
-    background-image: linear-gradient(to right, var(--color-primary), #EC4899);
+    background-image: linear-gradient(to right, var(--color-primary), #9CA3AF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

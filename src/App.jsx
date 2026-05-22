@@ -9,7 +9,7 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 selection:bg-purple-200 selection:text-purple-900">
+    <div className="w-full min-h-screen bg-gray-50 selection:bg-indigo-100 selection:text-indigo-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 md:px-20 h-20 flex items-center justify-between">

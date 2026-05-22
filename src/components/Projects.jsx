@@ -233,7 +233,7 @@ const Projects = () => {
             </h3>
           </div>
           <p className="text-gray-500 max-w-sm text-lg leading-relaxed font-medium">
-            A selection of my favorite projects where code meets meaningful data.
+            A collection of my projects spanning data science, machine learning, and full-stack engineering.
           </p>
         </div>
 
