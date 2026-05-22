@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 const Hero = () => {
   const imageCandidates = useMemo(
     () => [
+      new URL('../images/gayani_ekanayake.jpeg', import.meta.url).href,
       '/images/gayani_ekanayake.png',
       '/images/gayani_ekanayake.jpg',
       '/images/gayani_ekanayake.jpeg',
@@ -15,6 +16,13 @@ const Hero = () => {
     []
   );
   const [imageIndex, setImageIndex] = useState(0);
+
+  const handleImageError = () => {
+    setImageIndex((current) => {
+      const next = current + 1;
+      return next < imageCandidates.length ? next : current;
+    });
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6 md:px-20 relative overflow-hidden">
@@ -73,9 +81,10 @@ skills in Python, Power BI, and SQL to drive data-informed decisions
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-gray-300 rounded-[3rem] rotate-6 opacity-80 mix-blend-multiply blur-sm shadow-2xl transition-transform duration-700 group-hover:rotate-12"></div>
             <div className="absolute inset-0 bg-white rounded-[3rem] -rotate-3 overflow-hidden shadow-xl border border-gray-100">
               <img
-                src={profileImg}
+                src={imageCandidates[imageIndex]}
                 alt="Gayani Ekanayake"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                onError={handleImageError}
               />
             </div>
           </div>
