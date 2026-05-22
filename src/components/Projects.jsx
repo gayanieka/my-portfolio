@@ -187,20 +187,14 @@ const projectsData = [
       }
     ]
   },
-   {
-    title: "FixTidy Mobile Application UI/UX Design",
-    category: "UI/UX Design",
-    description: "Mobile UI/UX design for a cleaning and repair service provider platform (Fixed & Tidy) that connects users with screened professionals for reliable home maintenance services.",
-    shortDescription: "Mobile UI/UX design for a cleaning & repair service provider platform.",
-    details: "Designed the mobile UI/UX for a cleaning and repair service provider platform (FixTidy). Focused on clear user flows, intuitive navigation, and a clean interface to help users book reliable home maintenance services with screened professionals.",
-    tech: ["UI/UX", "Mobile App", "Design"],
-    image: null,
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/gayanieka/Mobile-Application-UIUX-design-for-cleaning-service-provider"
-      }
-    ]
+  {
+    title: "Computer Retail Management System",
+    category: "Full Stack Development",
+    description: "Built a MERN-stack e-commerce + retail management platform with secure RBAC login, staff tracking, and admin reporting.",
+    tech: ["MongoDB", "Express.js", "React.js", "Node.js", "REST API"],
+    image: "./project6.jpg",
+    github: "https://github.com/gayanieka/website-project-1.git",
+    live: "https://github.com/gayanieka/website-project-1.git"
   }
 ];
 

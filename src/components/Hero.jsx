@@ -31,19 +31,14 @@ const Hero = () => {
             👋 Hi, Welcome to my portfolio
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
-            I'm Gayani <br className="hidden md:block" />
-            <span className="text-gradient">Ekanayake.</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 leading-[1.05] tracking-tighter break-words">
+            Hi, I'm
+            <span className="block text-gradient">Gayani</span>
+            <span className="block text-gradient">Ekanayake</span>
           </h1>
 
-          <p className="text-base md:text-lg text-gray-700 font-bold tracking-wide uppercase">
+          <p className="text-xl md:text-2xl font-extrabold text-gray-800 tracking-tight">
             Data Science Undergraduate
-          </p>
-          
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed font-medium mx-auto md:mx-0">
-            Data Science undergraduate with hands-on experience in data analysis, Power BI dashboards, data
-warehouse and programming using Python, R, Java, React and others. Seeking an internship to leverage
-skills in Python, Power BI, and SQL to drive data-informed decisions
           </p>
 
           <p className="text-lg text-gray-600 max-w-2xl leading-relaxed font-medium mx-auto md:mx-0">
