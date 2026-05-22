@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6 md:px-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-400 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob"></div>
-      <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-slate-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-gray-300 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
       <div className="absolute bottom-[-20%] left-[20%] w-[40%] h-[40%] bg-blue-400 rounded-full mix-blend-multiply filter blur-[120px] opacity-30 animate-blob animation-delay-4000"></div>
 
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
@@ -50,7 +50,7 @@ const Hero = () => {
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] group">
             {/* Abstract Shape or Profile Representation */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-slate-400 rounded-[3rem] rotate-6 opacity-80 mix-blend-multiply blur-sm shadow-2xl transition-transform duration-700 group-hover:rotate-12"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-gray-300 rounded-[3rem] rotate-6 opacity-80 mix-blend-multiply blur-sm shadow-2xl transition-transform duration-700 group-hover:rotate-12"></div>
             <div className="absolute inset-0 bg-white rounded-[3rem] -rotate-3 overflow-hidden shadow-xl border border-gray-100">
               <img
                 src={profileImg}
