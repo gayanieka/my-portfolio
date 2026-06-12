@@ -10,7 +10,7 @@ const Contact = () => {
               Let's work <span className="text-primary">together.</span>
             </h2>
             <p className="text-gray-600 max-w-sm">
-              Seeking Data Science & Machine Learning internships. Let's connect!
+              Seeking Data Science & Analysis internships. Let's connect!
             </p>
             <p className="text-sm text-gray-700 font-bold">
               Email:{' '}
