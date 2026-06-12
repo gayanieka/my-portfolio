@@ -52,7 +52,7 @@ const About = () => {
                 <span className="text-gray-500 font-medium">Dean’s Awards</span>
               </div>
               <div className="bg-white p-8 rounded-[2rem] shadow-xl shadow-gray-100 flex flex-col justify-center items-center text-center transform transition-transform hover:-translate-y-2">
-                <span className="text-5xl font-black text-primary mb-2">6+</span>
+                <span className="text-5xl font-black text-primary mb-2">7+</span>
                 <span className="text-gray-500 font-medium">Key Projects</span>
               </div>
               <div className="bg-gray-900 p-8 rounded-[2rem] shadow-xl shadow-gray-900/20 flex flex-col justify-center items-center text-center transform transition-transform hover:-translate-y-2 translate-y-8 col-span-2">

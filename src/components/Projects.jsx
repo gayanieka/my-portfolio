@@ -149,6 +149,18 @@ const projectsData = [
     ]
   },
   {
+    title: "Patient Wait Time Power BI Dashboard",
+    category: "BI & Data Warehouse",
+    description: "Built an interactive Power BI dashboard to analyze patient wait-time trends and support healthcare operations with clear visual insights.",
+    shortDescription: "Interactive Power BI dashboard for patient wait-time analysis.",
+    details: "Built an interactive Power BI dashboard to analyze patient wait-time patterns, highlight operational bottlenecks, and support data-driven healthcare decision-making.",
+    tech: ["Power BI", "Data Visualization", "DAX"],
+    image: null,
+    links: [
+      { label: "GitHub", href: "https://github.com/gayanieka/Patient_wait_time_dashbord.git" }
+    ]
+  },
+  {
     title: "Full-Stack University Management System Project",
     category: "Full Stack",
     description: "Built a scalable university management web app with role-based workflows and REST APIs; implemented resource management and a smart recommendation feature.",
