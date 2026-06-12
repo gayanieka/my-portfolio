@@ -120,6 +120,14 @@ const ExternalLinkIcon = ({ className = '' }) => (
   </Icon>
 );
 
+const defaultProjectImage = new URL('../images/gayani_ekanayake.jpeg', import.meta.url).href;
+
+const getProjectImages = (project) => {
+  const images = [project.image, ...(Array.isArray(project.images) ? project.images : [])].filter(Boolean);
+
+  return images.length > 0 ? images : [];
+};
+
 const projectsData = [
  
   {
@@ -130,6 +138,11 @@ const projectsData = [
     details: "Analyzed healthcare datasets to identify trends, patterns, and risk factors. Performed data cleaning and exploratory analysis, then built and evaluated regression-based predictive models for patient outcomes and insights.",
     tech: ["R"],
     image: null,
+    images: [
+      new URL('../images/healthcare_1.png', import.meta.url).href,
+      new URL('../images/healthcare_2.png', import.meta.url).href,
+      new URL('../images/healthcare_3.png', import.meta.url).href
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/gayanieka/healthcare-stress-analysis.git" }
     ]
@@ -143,6 +156,10 @@ const projectsData = [
     details: "Designed and implemented a dimensional data warehouse using a star schema. Built ETL pipelines, created OLAP cubes for analytics, and delivered interactive Power BI dashboards and reports to support business intelligence and decision-making.",
     tech: ["Star Schema", "Dimensional Modeling", "ETL (SSIS)", "OLAP (SSAS)", "Power BI", "SSRS"],
     image: null,
+    images: [
+      new URL('../images/datawarehouse_1.png', import.meta.url).href,
+      new URL('../images/datawarehouse_2.png', import.meta.url).href
+    ],
     links: [
       { label: "GitHub (Warehouse)", href: "https://github.com/gayanieka/Shopping-mall-data-warehouse.git" },
       { label: "GitHub (Reporting)", href: "https://github.com/gayanieka/Shopping-mall-olap-reporting.git" }
@@ -156,6 +173,10 @@ const projectsData = [
     details: "Built an interactive Power BI dashboard to analyze patient wait-time patterns, highlight operational bottlenecks, and support data-driven healthcare decision-making.",
     tech: ["Power BI", "Data Visualization", "DAX"],
     image: null,
+    images: [
+      new URL('../images/paitent_wait_time_dashboard.png', import.meta.url).href,
+      new URL('../images/patient_wait_time_2.png', import.meta.url).href
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/gayanieka/Patient_wait_time_dashbord.git" }
     ]
@@ -168,6 +189,11 @@ const projectsData = [
     details: "Built a scalable university management web application with role-based workflows and REST APIs. Implemented core modules for resource management and included a smart recommendation feature to support better user experiences and decision-making.",
     tech: ["React.js", "Spring Boot", "Java", "MySQL"],
     image: null,
+    images: [
+      new URL('../images/smart_campus_1.png', import.meta.url).href,
+      new URL('../images/smart_campus_2.png', import.meta.url).href,
+      new URL('../images/smart_campus_3.png', import.meta.url).href
+    ],
     links: [
       { label: "GitHub", href: "https://github.com/gayanieka/Smart-Campus-Website-Project.git" }
     ]
@@ -192,6 +218,10 @@ const projectsData = [
     details: "Developed an Android wellness app that supports habit tracking, mood tracking, and hydration reminders. Built with Kotlin and used SharedPreferences to securely store user progress and preferences, ensuring a smooth experience even after the app is closed.",
     tech: ["Kotlin", "Android", "SharedPreferences"],
     image: null,
+     images: [
+      new URL('../images/daily_zen_1.jpeg', import.meta.url).href,
+      new URL('../images/daily_zen_2.jpeg', import.meta.url).href
+    ],
     links: [
       {
         label: "GitHub",
@@ -218,6 +248,7 @@ const projectsData = [
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
     const onKeyDown = (e) => {
@@ -231,6 +262,18 @@ const Projects = () => {
 
     return undefined;
   }, [activeProject]);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [activeProject]);
+
+  const goToPreviousImage = (projectImages) => {
+    setActiveImageIndex((currentIndex) => (currentIndex - 1 + projectImages.length) % projectImages.length);
+  };
+
+  const goToNextImage = (projectImages) => {
+    setActiveImageIndex((currentIndex) => (currentIndex + 1) % projectImages.length);
+  };
 
   return (
     <section id="projects" className="py-24 bg-white">
@@ -270,7 +313,7 @@ const Projects = () => {
               }}
             >
               {/* Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-white" />
+              <div className="absolute inset-0 bg-linear-to-br from-purple-50 via-white to-white" />
               <div className={`absolute -top-20 -right-24 w-72 h-72 rounded-full blur-3xl ${meta.glow}`} />
               <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full blur-3xl bg-purple-200/30" />
 
@@ -286,7 +329,7 @@ const Projects = () => {
               ) : null}
 
               {/* Content */}
-              <div className="relative z-10 flex flex-col h-[480px] p-8">
+              <div className="relative z-10 flex flex-col h-120 p-8">
                 <div className="flex items-center justify-between gap-4">
                   <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-900 shadow-lg">
                     <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full ${meta.bg} ${meta.color} border border-white/60`}>
@@ -359,7 +402,7 @@ const Projects = () => {
       </div>
 
       {activeProject ? (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-6">
           <button
             type="button"
             className="absolute inset-0 bg-gray-900/60"
@@ -369,14 +412,17 @@ const Projects = () => {
 
           {(() => {
             const meta = getCategoryMeta(activeProject.category);
+            const projectImages = getProjectImages(activeProject);
+            const hasCustomImages = projectImages.some((image) => image !== defaultProjectImage);
+            const mainImage = projectImages[activeImageIndex] || projectImages[0];
 
             return (
-              <div className="relative w-full max-w-2xl rounded-[2rem] bg-white ring-1 ring-gray-200 shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-white" />
+              <div className="relative w-full max-w-lg rounded-4xl bg-white ring-1 ring-gray-200 shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-purple-50 via-white to-white" />
                 <div className={`absolute -top-20 -right-24 w-72 h-72 rounded-full blur-3xl ${meta.glow}`} />
                 <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full blur-3xl bg-purple-200/30" />
 
-                <div className="relative p-8">
+                <div className="relative p-6 md:p-7">
                   <div className="flex items-start justify-between gap-4">
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-200/80 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-900 shadow-lg">
                       <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full ${meta.bg} ${meta.color} border border-white/60`}>
@@ -398,13 +444,76 @@ const Projects = () => {
                     </button>
                   </div>
 
-                  <h4 className="mt-8 text-3xl md:text-4xl font-black text-gray-900 tracking-tight leading-tight">
+                  <h4 className="mt-6 text-2xl font-black text-gray-900 tracking-tight leading-tight">
                     {activeProject.title}
                   </h4>
 
-                  <p className="mt-4 text-gray-600 leading-relaxed">
+                  <p className="mt-3 text-sm md:text-base text-gray-600 leading-relaxed">
                     {activeProject.details || activeProject.description}
                   </p>
+
+                  <div className="mt-6 mx-auto w-full max-w-96 space-y-3">
+                    <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gray-50 shadow-lg shadow-gray-200/60">
+                      <div className="flex items-center justify-center h-56 w-full bg-gray-50">
+                        <img
+                          src={mainImage}
+                          alt={`${activeProject.title} preview`}
+                          className="max-h-56 w-auto object-contain"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                      </div>
+
+                      {projectImages.length > 1 ? (
+                        <div className="absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center justify-between px-3">
+                          <button
+                            type="button"
+                            onClick={() => goToPreviousImage(projectImages)}
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-lg shadow-gray-200/80 border border-gray-200 hover:bg-white"
+                            aria-label="Previous image"
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => goToNextImage(projectImages)}
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-lg shadow-gray-200/80 border border-gray-200 hover:bg-white"
+                            aria-label="Next image"
+                          >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                              <path d="M9 18l6-6-6-6" />
+                            </svg>
+                          </button>
+                        </div>
+                      ) : null}
+                    </div>
+
+                    {projectImages.length > 1 ? (
+                      <div className={`grid ${projectImages.length === 2 ? 'grid-cols-2' : 'grid-cols-3'} gap-2 justify-items-center`}>
+                        {projectImages.map((image, idx) => (
+                          <button
+                            key={`${image}-${idx}`}
+                            type="button"
+                            onClick={() => setActiveImageIndex(idx)}
+                            className={`w-full overflow-hidden rounded-2xl border bg-gray-50 transition-all ${activeImageIndex === idx ? 'border-gray-900 ring-2 ring-gray-900/20 shadow-lg' : 'border-gray-200 hover:border-gray-300'}`}
+                            aria-label={`View ${activeProject.title} image ${idx + 1}`}
+                          >
+                            <img
+                              src={image}
+                              alt={`${activeProject.title} preview ${idx + 1}`}
+                              className="h-18 w-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          </button>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             );
