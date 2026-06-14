@@ -194,7 +194,7 @@ const projectsData = [
       new URL('../images/movie_2.png', import.meta.url).href
     ],
   links: [
-    { label: "GitHub (Notebook)", href: "https://github.com/gayanieka/Movie_prediction.git" }
+    { label: "GitHub", href: "https://github.com/gayanieka/Movie_prediction.git" }
   ]
 },
   {
