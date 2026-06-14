@@ -197,6 +197,23 @@ const projectsData = [
     { label: "GitHub", href: "https://github.com/gayanieka/Movie_prediction.git" }
   ]
 },
+{
+    title: "Titanic Survival Prediction",
+    category: "Data Analysis",
+    description: "Built a machine learning model using Logistic Regression to predict passenger survival on the Titanic based on demographics and ticket information.",
+    shortDescription: "Logistic Regression model predicting Titanic passenger survival.",
+    details: "Trained a Logistic Regression model to analyze the Titanic dataset. Performed data cleaning, handled missing values, and encoded categorical variables to achieve accurate survival predictions based on passenger class, gender, age, and travel fare.",
+    tech: ["Python", "Pandas", "Scikit-Learn", "Logistic Regression", "Seaborn"],
+    image: null, 
+    images: [
+      new URL('../images/titanic_1.png', import.meta.url).href,
+      new URL('../images/titanic_2.png', import.meta.url).href
+      
+    ],
+    links: [
+      { label: "GitHub", href: "https://github.com/your-username/titanic-survival.git" } // Replace with your actual repo link
+    ]
+  },
   {
     title: "Full-Stack University Management System Project",
     category: "Full Stack",
