@@ -182,6 +182,23 @@ const projectsData = [
     ]
   },
   {
+  title: "CineMatch – Movie Recommender",
+  category: "Data Analysis", // Or a new category if preferred
+  description: "A content-based movie recommendation system that uses cosine similarity to provide personalized movie suggestions based on user input.",
+  shortDescription: "Content-based movie recommender using machine learning and cosine similarity.",
+  details: "Developed a movie recommendation engine using Python, pandas, and scikit-learn. The system processes movie metadata (genres, cast, director) to calculate similarity scores and deliver accurate recommendations based on user-searched titles.",
+  tech: ["Python", "Pandas", "Scikit-Learn", "Cosine Similarity", "TF-IDF Vectorizer"],
+  image: null, 
+  images: [
+      new URL('../images/movie_1.png', import.meta.url).href,
+      new URL('../images/movie_2.png', import.meta.url).href
+    ],
+  links: [
+    { label: "GitHub (Notebook)", href: "https://github.com/gayanieka/Movie_prediction.git" },
+    { label: "Live Demo", href: "#" } 
+  ]
+},
+  {
     title: "Full-Stack University Management System Project",
     category: "Full Stack",
     description: "Built a scalable university management web app with role-based workflows and REST APIs; implemented resource management and a smart recommendation feature.",
